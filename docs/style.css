@@ -1,0 +1,151 @@
+@mixin color($bckg-color, $border-col, $border-b-r, $border-t-l){
+  background-color: $bckg-color;
+  border: $border-col $border-b-r solid;
+  border-top: $border-col $border-t-l solid;
+  border-left: $border-col $border-t-l solid;
+}
+
+@mixin flex($direction, $justify, $align){
+   display: flex;
+   flex-direction: $direction;
+   justify-content: $justify;
+   align-items: $align;
+}
+
+%range-thumb{
+  width: 10px;
+  height: 25px;
+  border-radius: 4px;
+  border: rgb(212, 212, 212) 1px solid;
+  background: rgb(85, 85, 85);
+}
+body{
+  @include flex(row, center, stretch);
+ font-family: 'Roboto', sans-serif;
+  
+ main{
+ @include flex(row, space-around, center);
+ width: 600px;
+ height: 400px;
+ border-radius: 5px;
+ background-color: rgb(41, 41, 41);
+    
+ .drums{
+  @include flex(column, center, stretch);
+
+.row{
+  @include flex(row, flex-start, stretch);
+
+.drum-pad{
+ @include flex(row, center, center);
+ border: none;
+ width: 90px;
+ height: 90px;
+ margin: 10px ;
+ border-radius: 3px;
+ background-color: rgb(211, 211, 211);
+ color: rgb(20, 20, 20);
+ font-size: 20px;
+ font-weight: bold;
+ box-shadow: 11px 9px 15px -4px rgba(19, 19, 19, 0.77);
+ cursor: pointer;
+}
+}
+   
+}
+    
+ .display-volume{
+    @include flex(column, flex-start, center);
+  
+  p{
+  font-size: 15px;
+  margin: 5px 0;
+  margin-bottom: 25px ;
+  color: white;
+}
+    
+  #display{
+    @include flex(row, center, center);
+    width: 150px;
+    height: 50px;
+    border-radius: 3px;
+    background-color: rgb(117, 117, 117);
+    font-size: 20px;
+   
+  p{
+  width: 150px;
+  height: 35px;
+  padding-top: 10px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin: 0;
+  @include color(auto,rgb(92, 92, 92), 4px, 2px)
+}
+}
+    
+  #volume{
+  margin-top: 25px;
+  
+  input{
+  -webkit-appearance: none;
+  width: 150px;
+  background: rgb(194, 194, 194);
+  height: 5px;
+  border-radius: 3px;
+  margin: 0;
+}
+  input::-moz-range-thumb{
+  @extend %range-thumb
+}
+  input::-webkit-slider-thumb {
+     -webkit-appearance: none;
+     width: 10px;
+     height: 25px;
+     border-radius: 4px;
+     border: rgb(212, 212, 212) 1px solid;
+     background: rgb(85, 85, 85);
+    }
+} 
+    
+  .kit, .power{
+  @include flex(row, flex-start, center);
+  width: 62.5px;
+  margin-top: 25px;
+  background: black;
+  
+ input{
+ width: 25px;
+ height: 25px;
+ position: relative;
+ z-index: 2;
+ opacity: 0;
+ cursor: pointer;
+}
+ input:checked ~ div, input:checked{
+  transform: translateX(30px);
+}
+  div{
+  width: 20px;
+  height: 20px;
+  margin: 2.5px;
+  position: absolute;
+  }
+ .kit-switch{
+  @include color(rgb(52, 73, 117),rgb(41, 59, 92), 4px, 2px);
+ }
+ .power-switch{
+  @include color(rgb(52, 117, 52),rgb(41, 92, 41), 4px, 2px);
+ }
+    
+}
+   
+}
+   
+  } 
+  
+}
+
+.active{
+  box-shadow: 0px 5px 41px -3px rgba(19, 19, 19, 0.77);
+  background: radial-gradient(circle, rgb(211, 211, 211) 0%, rgba(255,255,255,1) 22%, rgb(211, 211, 211) 71%);
+}
