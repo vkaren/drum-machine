@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>drum machine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+</head>
+<body>
+  <main id="drum-machine">
+   <div class="drums">
+       <div class="row"> 
+        <button class="drum-pad" id="Clap-Bongo">
+           <p>Q</p>
+           <audio src="" class="clip" id="Q"></audio>
+        </button>
+       <button class="drum-pad" id="Crash-Bongo">
+           <p>W</p>
+           <audio src="" class="clip" id="W"></audio>
+       </button>
+       <button class="drum-pad" id="Hit Hat-Bongo">
+           <p>E</p>
+          <audio src="" class="clip" id="E"></audio>
+       </button>  
+       </div>
+
+       <div class="row">
+       <button class="drum-pad" id="ride-clap">
+           <p>A</p>
+           <audio src="" class="clip" id="A"></audio>
+       </button>
+       <button class="drum-pad" id="high-tom-mark-tree">
+           <p>S</p>
+           <audio src="" class="clip" id="S"></audio>
+       </button>
+       <button class="drum-pad" id="mid-tom-crash">
+           <p>D</p>
+           <audio src="" class="clip" id="D"></audio>
+       </button> 
+       </div>
+       
+       <div class="row">
+        <button class="drum-pad" id="low-high-tom">
+           <p>Z</p>
+           <audio src="" class="clip" id="Z"></audio>
+        </button>
+       <button class="drum-pad" id="snare-mid-tom">
+           <p>X</p>
+           <audio src="" class="clip" id="X"></audio>
+       </button>
+       <button class="drum-pad" id="kick-low-tom">
+           <p>C</p>
+           <audio src="" class="clip" id="C"></audio>
+       </button>  
+       </div>
+       
+   </div>
+
+   <div class="display-volume">
+    <div class="power">
+     <input type="checkbox" id="power">
+     <div class="power-switch"></div>
+    </div>
+    <p>Power</p>
+
+    <div id="display">
+       <p></p>
+   </div>
+   
+   <div id="volume">
+      <input type="range" min="0" max="100" value="50" id="slider" class="volume">
+   </div>
+
+   <div class="kit">
+    <input type="checkbox" id="kit">
+    <div class="kit-switch"></div>
+   </div>
+   <p>Bank</p> 
+ </div>
+
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
