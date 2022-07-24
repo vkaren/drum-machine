@@ -62,6 +62,7 @@ function updateKit(){
     drumPad.off("click", onButtonClick); 
     volumeSlider.off('input',updateVolume)
     kitType.off('input', updateKit)
+    display.text('')
 } else{
   $(document).on("keydown", onButtonClick);
     drumPad.on("click", onButtonClick); 
